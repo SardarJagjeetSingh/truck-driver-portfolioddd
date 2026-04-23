@@ -1,0 +1,154 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-multi-page-company-website-named-ethical-bytes-with-top-level-navigation-and-routes-for-home-about-services-pricing-and-contact-us",
+      "featureTitle": "Create a multi-page company website named “Ethical Bytes” with top-level navigation and routes for: Home, About, Services, Pricing, and Contact Us.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/components/SiteHeader.tsx",
+        "frontend/src/components/SiteLayout.tsx",
+        "frontend/src/main.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/PricingPage.tsx",
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-populate-the-services-page-with-service-sections-for-website-development-website-making-website-design-and-graphic-design-and-optionally-add-additional-relevant-services-that-fit-a-digital-studio-e-g-branding-ui-ux-seo-basics-without-changing-the-core-three-requested-services",
+      "featureTitle": "Populate the Services page with service sections for: Website Development (\"website making\"), Website Design, and Graphic Design, and optionally add additional relevant services that fit a digital studio (e.g., branding, UI/UX, SEO basics) without changing the core three requested services.",
+      "files": [
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-pricing-page-with-at-least-three-pricing-tiers-e-g-starter-professional-enterprise-that-map-sensibly-to-the-listed-services-with-clear-included-features-and-a-primary-call-to-action-linking-to-the-contact-us-page",
+      "featureTitle": "Create a Pricing page with at least three pricing tiers (e.g., Starter, Professional, Enterprise) that map sensibly to the listed services, with clear included features and a primary call-to-action linking to the Contact Us page.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/PricingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-an-about-page-describing-ethical-bytes-as-a-service-based-company-with-a-short-mission-values-section-emphasizing-ethical-transparent-work-and-a-brief-how-we-work-section",
+      "featureTitle": "Create an About page describing Ethical Bytes as a service-based company with a short mission/values section emphasizing ethical, transparent work, and a brief “How we work” section.",
+      "files": [
+        "frontend/src/pages/AboutPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-contact-us-page-with-a-form-name-email-company-optional-service-interest-dropdown-message-and-submit-the-inquiry-to-the-backend-for-storage-show-success-and-error-states-in-the-ui",
+      "featureTitle": "Implement a Contact Us page with a form (name, email, company/optional, service interest dropdown, message) and submit the inquiry to the backend for storage; show success and error states in the UI.",
+      "files": [
+        "frontend/src/hooks/useSubmitInquiry.ts",
+        "frontend/src/pages/ContactPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-creative-visual-theme-for-the-ethical-bytes-brand-colors-typography-spacing-and-component-styling-and-use-it-consistently-across-all-pages-avoid-blue-purple-as-the-primary-palette",
+      "featureTitle": "Apply a coherent, creative visual theme for the Ethical Bytes brand (colors, typography, spacing, and component styling) and use it consistently across all pages; avoid blue/purple as the primary palette.",
+      "files": [
+        "frontend/src/components/SiteHeader.tsx",
+        "frontend/src/components/SiteLayout.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-include-static-brand-imagery-in-the-app-stored-under-frontend-public-assets-generated-and-use-them-on-the-home-page-and-or-header-footer",
+      "featureTitle": "Generate and include static brand imagery in the app (stored under frontend/public/assets/generated) and use them on the Home page and/or header/footer.",
+      "files": [
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/components/SiteHeader.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

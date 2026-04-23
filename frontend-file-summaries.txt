@@ -1,0 +1,14 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with routes for Home, About, Services, Pricing, and Contact pages, all wrapped in a shared SiteLayout.",
+  "frontend/src/components/SiteLayout.tsx": "Layout wrapper component that renders the shared header, main content area with Outlet for page content, and footer across all routes.",
+  "frontend/src/components/SiteHeader.tsx": "Responsive navigation header with logo, desktop/mobile navigation menus, active route highlighting, and a \"Get Started\" CTA button.",
+  "frontend/src/components/SiteFooter.tsx": "Site footer with branding, quick navigation links, contact information, and attribution with caffeine.ai link.",
+  "frontend/src/pages/HomePage.tsx": "Home page featuring hero section with CTA buttons, core services overview cards, why choose us section with benefits, and ready-to-start card.",
+  "frontend/src/pages/AboutPage.tsx": "About page showcasing Ethical Bytes mission, core values (transparency, collaboration, quality, innovation), and four-step work process (Discovery, Design, Build, Launch).",
+  "frontend/src/pages/ServicesPage.tsx": "Services page displaying three core services (Website Development, Website Design, Graphic Design) with deliverables, plus three additional services (Branding, SEO, Hosting).",
+  "frontend/src/pages/PricingPage.tsx": "Pricing page with three tiers (Starter, Professional, Enterprise), feature lists, CTAs to contact page, and FAQ section.",
+  "frontend/src/pages/ContactPage.tsx": "Contact page with inquiry form (name, email, company, service interest, message), success/error states, and contact information cards.",
+  "frontend/src/hooks/useSubmitInquiry.ts": "React Query mutation hook that submits contact form inquiries to the backend, mapping user-facing service labels to backend ServiceInterest enum values.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring a warm orange/amber primary palette (avoiding blue/purple), with light and dark mode support.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the design system with custom colors, Inter font family, and animation utilities."
+}

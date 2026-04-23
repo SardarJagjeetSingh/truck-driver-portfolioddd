@@ -1,0 +1,103 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-05T12:10:54.595Z",
+  "summary": "Most frontend pages/routes, shared header/footer layout, services and pricing content, and a contact form with React Query submission wiring were added. However, backend inquiry persistence does not appear stable across upgrades, backend return/error handling is minimal, and several unrequested authentication/access-control features (Internet Identity, admin token, authorization mixins) were introduced. The generated service-icons image is not evidenced as included/used.",
+  "missing_requirements": [
+    {
+      "id": "REQ-5",
+      "requirement": "Submitted inquiries are persisted in the Motoko canister and remain available after refresh.",
+      "reason": "The backend stores inquiries in an in-memory Map with non-stable vars; the diff does not show a stable data structure or postupgrade/preupgrade logic to persist inquiries across canister upgrades/redeploys.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Backend defines a stable data structure to store inquiries (name, email, service interest, message, optional company, createdAt).",
+      "reason": "Inquiry storage uses `let inquiries = Map.empty<Nat, Inquiry>()` and `var nextInquiryId = 0` without `stable` storage; also the timestamp field is named `timestamp` rather than `createdAt` in the shown type.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Creating an inquiry returns a clear success result (or throws a controlled error) that the frontend can handle.",
+      "reason": "`submitInquiry(...) : async ()` returns no result type indicating success/failure; no validation or controlled error handling is shown for bad inputs.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useSubmitInquiry.ts"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "requirement": "Generate and include static brand imagery in the app (stored under frontend/public/assets/generated) including the set of 3 simple line icons representing web development, web design, and graphic design, and use them on the Home page and/or header/footer.",
+      "reason": "Frontend references the logo and hero images by path, but there is no evidence in the diff summary of the `ethical-bytes-service-icons.dim_512x512.png` asset being added or referenced/used; Home/Services use Lucide icons instead.",
+      "evidence": [
+        "frontend/src/components/SiteHeader.tsx",
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/ServicesPage.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication/provider and identity-aware actor creation for frontend.",
+      "reason": "The BuildRequest explicitly constrained: \"Do not add third-party auth providers\"; the diff adds Internet Identity integration and identity-based actor handling.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Backend authorization/access-control framework (admin/user permissions) and secret admin token initialization.",
+      "reason": "Not requested for the marketing site/contact storage; also conflicts with the constraint against adding third-party auth providers/extras for contact submission.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/utils/urlParams.ts"
+      ]
+    },
+    {
+      "description": "Admin-only inquiry retrieval/search endpoints (getInquiry, findInquiriesByName) beyond the requested list-inquiries query method.",
+      "reason": "REQ-6 only asked for an update method to create an inquiry and a query method to list inquiries; additional admin-only endpoints were added without being requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Footer attribution/link to caffeine.ai.",
+      "reason": "Not requested by BuildRequest and adds extra external branding/linking in a core site component.",
+      "evidence": [
+        "frontend/src/components/SiteFooter.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/SiteFooter.tsx",
+    "frontend/src/components/SiteHeader.tsx",
+    "frontend/src/components/SiteLayout.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useSubmitInquiry.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/PricingPage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

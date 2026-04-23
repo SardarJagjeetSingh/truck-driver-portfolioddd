@@ -1,0 +1,180 @@
+{
+  "kind": "build_request",
+  "title": "Ethical Bytes marketing website with core pages, services, and contact form",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a multi-page company website named “Ethical Bytes” with top-level navigation and routes for: Home, About, Services, Pricing, and Contact Us.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a service based company website named ethical bytes the website contains home page about pricing page and services page and contact us page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A header navigation is present on all pages with links to Home, About, Services, Pricing, Contact Us.",
+        "Each navigation link routes to the correct page without a full page reload.",
+        "Each page includes an H1 title matching the page name and content relevant to that page.",
+        "A footer is present on all pages with the company name “Ethical Bytes” and basic links."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Populate the Services page with service sections for: Website Development (\"website making\"), Website Design, and Graphic Design, and optionally add additional relevant services that fit a digital studio (e.g., branding, UI/UX, SEO basics) without changing the core three requested services.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "the service provide is website making website design graphic design and as you want to add it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Services page includes clear cards/sections for Website Development, Website Design, and Graphic Design.",
+        "Each service includes a short description and a small list of included deliverables.",
+        "Any additional services (if added) are clearly separated and do not replace/remove the three requested services."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a Pricing page with at least three pricing tiers (e.g., Starter, Professional, Enterprise) that map sensibly to the listed services, with clear included features and a primary call-to-action linking to the Contact Us page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "about pricing page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Pricing page shows at least three tiers with a price (or “Starting at …”) and a feature list.",
+        "Each tier has a CTA button that routes to Contact Us.",
+        "Copy is in English and is consistent with the Ethical Bytes brand name."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create an About page describing Ethical Bytes as a service-based company with a short mission/values section emphasizing ethical, transparent work, and a brief “How we work” section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "home page about pricing page and services page and contact us page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "About page includes a mission/values section and a simple process section (e.g., Discovery → Design → Build → Launch).",
+        "All user-facing text is in English.",
+        "Page layout is responsive for mobile and desktop."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement a Contact Us page with a form (name, email, company/optional, service interest dropdown, message) and submit the inquiry to the backend for storage; show success and error states in the UI.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "contact us page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact form includes: name, email, service interest, message (company optional).",
+        "On submit, the UI shows a loading state, then a success confirmation when saved.",
+        "If submission fails, the UI shows an error message and does not lose the user’s typed content.",
+        "Submitted inquiries are persisted in the Motoko canister and remain available after refresh."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add backend support for storing contact inquiries with timestamps, and provide a query method to list inquiries (intended for internal use; no public admin UI required).",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "contact us page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend defines a stable data structure to store inquiries (name, email, service interest, message, optional company, createdAt).",
+        "Backend exposes an update method to create an inquiry and a query method to list inquiries.",
+        "Creating an inquiry returns a clear success result (or throws a controlled error) that the frontend can handle."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Apply a coherent, creative visual theme for the Ethical Bytes brand (colors, typography, spacing, and component styling) and use it consistently across all pages; avoid blue/purple as the primary palette.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages share consistent typography, button styles, spacing, and section layout.",
+        "Primary color palette is not dominated by blue or purple.",
+        "Design remains accessible with sufficient contrast for text and interactive elements."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Generate and include static brand imagery in the app (stored under frontend/public/assets/generated) and use them on the Home page and/or header/footer.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images exist in frontend/public/assets/generated and are referenced directly by the frontend (not served via backend).",
+        "Home page includes at least one hero/brand image, and the site includes a logo mark or wordmark in the header.",
+        "Images render crisply on desktop and mobile (proper sizing and aspect ratio)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for all user-facing text.",
+    "Backend must remain a single Motoko actor in backend/main.mo (no additional backend services).",
+    "Do not edit files under frontend/src/components/ui or other immutable paths; compose UI using existing components instead.",
+    "Do not add third-party auth providers or external email/SMS integrations for contact form submission."
+  ],
+  "nonGoals": [
+    "Building a full CMS/admin dashboard for managing inquiries or site content.",
+    "Implementing real-time chat, push notifications, or email delivery for contact inquiries.",
+    "Adding e-commerce, payments, or subscription billing flows."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Minimal modern wordmark logo reading “Ethical Bytes” (ethical-bytes-logo.dim_512x256.png)",
+      "Abstract ethical-tech hero illustration with geometric circuit motifs, neutral palette with a warm accent (ethical-bytes-hero.dim_1600x900.png)",
+      "Set of 3 simple line icons representing web development, web design, and graphic design (ethical-bytes-service-icons.dim_512x512.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [
+      "Build a service-based company website for Ethical Bytes with Home, About, Services, Pricing, and Contact pages."
+    ],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Use English for user-facing site copy."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}
